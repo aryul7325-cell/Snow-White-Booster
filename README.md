@@ -1,7 +1,7 @@
-# Snow White Booster — Dr. Shin Clinic, Saigon
+# Snow White Booster — Dr. Shin · District 1, HCMC
 
 Landing page for the "Snow White Booster" (Radiesse collagen biostimulation) programme at
-Dr. Shin Clinic, District 1, Ho Chi Minh City.
+Dr. Shin's practice, District 1, Ho Chi Minh City.
 
 Published with GitHub Pages from `main` (root): <https://aryul7325-cell.github.io/Snow-White-Booster/>
 
