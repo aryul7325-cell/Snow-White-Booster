@@ -108,6 +108,14 @@ footer{padding:0 24px calc(env(safe-area-inset-bottom,0px) + 36px);text-align:ce
 .vn{position:absolute;z-index:2;top:calc(env(safe-area-inset-top,0px) + 26px);right:24px;text-align:right;font:italic 400 clamp(22px,5.2vw,46px)/1.18 var(--serif);color:var(--ink);text-shadow:0 0 14px rgba(251,248,243,.9),0 0 4px rgba(251,248,243,.7)}
 .vn{right:24px;color:#8C1D2F}
 .hero .eyebrow.kd{display:block;white-space:nowrap}.hero .eyebrow.kd #kdText{display:inline-block;letter-spacing:.08em;margin-right:-.08em}.hero .sw{display:inline-block}.hero h1{margin-top:8px}
+/* 2026-11-25 hero polish: vn tagline headroom + crop, 4-cell facts bar, one-line sub */
+.hero__img{width:106%;max-width:none;margin-left:-6%;object-position:54% 0%}
+.vn{top:calc(env(safe-area-inset-top,0px) + 84px);right:22px;font:italic 400 clamp(24px,6vw,50px)/1.14 var(--serif);color:#8C1D2F;text-shadow:0 0 26px rgba(251,248,243,.95),0 0 10px rgba(251,248,243,.9),0 0 3px rgba(251,248,243,.7)}
+.hero p.sub{max-width:none;font-size:clamp(15px,4.1vw,19px);white-space:nowrap;letter-spacing:-.005em}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 10px;align-items:start;font:500 clamp(9px,1.55vw,10px)/1.45 var(--sans);letter-spacing:.1em;color:var(--muted)}
+.facts span{display:block;min-width:0}
+.facts em{display:block;font-style:normal;font-weight:500;text-transform:none;letter-spacing:.08em;color:#3c4043;margin-bottom:1px}
+@media (max-width:540px){.facts{grid-template-columns:repeat(2,1fr);gap:14px 18px;font-size:10px}}
 </style>
 </head>
 <body id="top">
@@ -118,12 +126,12 @@ footer{padding:0 24px calc(env(safe-area-inset-bottom,0px) + 36px);text-align:ce
   <div class="hero__body">
     <p class="eyebrow kd"><span id="kdText">K-Doctor in Vietnam</span></p>
     <h1><span class="sw" id="swText">Snow White</span><br><em>Booster</em></h1>
-    <p class="sub">Your own collagen.<br>Not overfilled.</p>
+    <p class="sub">Your own collagen. Not overfilled.</p>
     <div class="cta">
       <a class="btn btn--solid" href="#book">Book Consultation</a>
       <a class="btn btn--ghost" href="https://maps.google.com/?cid=8634348373108775900" target="_blank" rel="noopener"><svg class="gm" viewBox="0 0 92.3 132.3" aria-hidden="true"><path fill="#1a73e8" d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"/><path fill="#ea4335" d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"/><path fill="#4285f4" d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-4.1 8.4-6.3 13.6-6.3"/><path fill="#fbbc04" d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"/><path fill="#34a853" d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.3 14.5 6.5 22.8 12.7 22.8 6.1 0 3.4-8.3 12.9-22.9"/></svg>Map</a>
     </div>
-    <div class="facts"><span>13 Years<br>in Saigon</span><span>MoH Licensed<br>CCHN</span><span>District 1<br>HCMC</span></div>
+    <div class="facts"><span><em>+20yrs</em>Aesthetic Doctor</span><span><em>+13yrs</em>In Vietnam</span><span><em>MOH LICENSED</em>CCHN</span><span><em>DISTRICT 1</em>HCMC</span></div>
   </div>
 </header>
 
