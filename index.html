@@ -252,11 +252,11 @@ section.treat .pillars{margin-top:26px}
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Licence enlargement"><button type="button" id="lbX" aria-label="Close">×</button><img src="" alt=""></div>
 
 <script>
+const $=s=>document.querySelector(s);
 if(document.getElementById('bookForm')){
 // ▼ Paste your form endpoint here later (e.g. Formspree, Google Apps Script, your own API). Leave "" to run without sending.
 const FORM_ENDPOINT = "https://formspree.io/f/xgaknond";
 
-const $=s=>document.querySelector(s);
 const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
 const DOW=['Mo','Tu','We','Th','Fr','Sa','Su'];
 const TIMES=['10:00','11:00','13:00','14:00','15:00','16:00','17:00'];
@@ -312,6 +312,7 @@ $('#bookForm').addEventListener('submit',async e=>{
   }catch(x){err.textContent='Sorry, something went wrong. Please try again.';btn.disabled=false;btn.textContent='Request Appointment'}
 });
 render();
+}
 
 const lb=$('#lb');document.querySelectorAll('.cred__thumb').forEach(b=>{b.onclick=()=>{const i=b.querySelector('img'),li=lb.querySelector('img');li.src=i.src;li.alt=i.alt;lb.classList.add('on')}});
 lb.onclick=e=>{if(e.target===lb||e.target.id==='lbX')lb.classList.remove('on')};
@@ -326,8 +327,6 @@ function fitKD(){const k=document.getElementById('kdText'),w=document.getElement
   if(cur>0&&target>0)eb.style.fontSize=(16*target/cur).toFixed(2)+'px';}
 fitKD();window.addEventListener('resize',fitKD);window.addEventListener('load',fitKD);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitKD);
-
-}
 </script>
 </body>
 </html>
