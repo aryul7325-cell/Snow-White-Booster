@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FBF8F3'/%3E%3Cpath d='M16 4c.6 6.4 1.8 8.4 12 12-10.2 3.6-11.4 5.6-12 12-.6-6.4-1.8-8.4-12-12 10.2-3.6 11.4-5.6 12-12z' fill='%23B08D54'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--ivory:#FBF8F3;--paper:#fff;--ink:#1D2022;--muted:#7B7568;--gold:#B08D54;--line:#E8E1D4;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,-apple-system,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -124,6 +124,9 @@ footer{padding:0 24px calc(env(safe-area-inset-bottom,0px) + 36px);text-align:ce
 .facts .lic{display:block;letter-spacing:.05em;margin-top:1px}
 .facts .lic i{display:block;font-style:normal;font-size:clamp(8px,2.05vw,9px);letter-spacing:.01em;white-space:nowrap}
 @media (max-width:540px){.facts{grid-template-columns:repeat(3,1fr);gap:14px 8px;font-size:10px}.facts em{letter-spacing:.05em}}
+/* 2026-11-25: fatter stat numbers + plain-English official-licence label */
+.facts em.n{font-size:clamp(19px,5.6vw,26px);font-weight:800;line-height:1.05;letter-spacing:-.005em;color:#1D2022;margin-bottom:5px}
+.facts em.moh{font-size:clamp(10.5px,2.8vw,13px);font-weight:700;line-height:1.05;letter-spacing:.06em;text-transform:uppercase;color:#1D2022;margin-bottom:5px;white-space:nowrap}
 @media (max-width:380px){.hero .cta{gap:8px}.hero .cta .btn{letter-spacing:.06em;padding:0 8px}.hero .cta .btn--ghost{font-size:11px;letter-spacing:.1em;padding:0 10px}}
 @media (max-width:420px){.hero__body{padding-left:20px;padding-right:20px}}
 </style>
@@ -141,7 +144,7 @@ footer{padding:0 24px calc(env(safe-area-inset-bottom,0px) + 36px);text-align:ce
       <a class="btn btn--solid" href="#book">Book Consultation</a>
       <a class="btn btn--ghost" href="https://maps.google.com/?cid=8634348373108775900" target="_blank" rel="noopener"><svg class="gm" viewBox="0 0 92.3 132.3" aria-hidden="true"><path fill="#1a73e8" d="M60.2 2.2C55.8.8 51 0 46.1 0 32 0 19.3 6.4 10.8 16.5l21.8 18.3L60.2 2.2z"/><path fill="#ea4335" d="M10.8 16.5C4.1 24.5 0 34.9 0 46.1c0 8.7 1.7 15.7 4.6 22l28-33.3-21.8-18.3z"/><path fill="#4285f4" d="M46.2 28.5c9.8 0 17.7 7.9 17.7 17.7 0 4.3-1.6 8.3-4.2 11.4 0 0 13.9-16.6 27.5-32.7-5.6-10.8-15.3-19-27-22.7L32.6 34.8c3.3-4.1 8.4-6.3 13.6-6.3"/><path fill="#fbbc04" d="M46.2 63.8c-9.8 0-17.7-7.9-17.7-17.7 0-4.3 1.5-8.3 4.1-11.3l-28 33.3c4.8 10.6 12.8 19.2 21 29.9l34.1-40.5c-3.3 3.9-8.1 6.3-13.5 6.3"/><path fill="#34a853" d="M59.1 109.2c15.4-24.1 33.3-35 33.3-63 0-7.7-1.9-14.9-5.2-21.3L25.6 98c2.6 3.4 5.3 7.3 7.9 11.3 9.3 14.5 6.5 22.8 12.7 22.8 6.1 0 3.4-8.3 12.9-22.9"/></svg>Map</a>
     </div>
-    <div class="facts"><span><em>+20yrs</em>Aesthetic Doctor</span><span><em>+13yrs</em>In Saigon</span><span><em>MOH LICENSED</em><span class="lic">CCHN <i>0020382/BYT-CCHN</i></span></span></div>
+    <div class="facts"><span><em class="n">+20yrs</em>Aesthetic Doctor</span><span><em class="n">+13yrs</em>In Saigon &amp;&nbsp;Hanoi</span><span><em class="moh">Officially<br>Licensed</em><span class="lic">CCHN <i>0020382/BYT-CCHN</i></span></span></div>
   </div>
 </header>
 
