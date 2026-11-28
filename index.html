@@ -173,28 +173,19 @@ section.treat .pillars{margin-top:26px}
 /* 2026-11-25f: start the hero text lower so the neck shows (her request) */
 @media (max-width:899px){.hero{--himg:calc(106vw * 1.25)}.hero__img{min-height:0}.hero__body{margin-top:-70px}.hero .cta{margin-top:18px}.facts{margin-top:12px;padding-top:10px}}
 .hero .eyebrow.kd{font-size:clamp(11px,3.3vw,15px)!important;letter-spacing:.06em!important;white-space:nowrap}
-/* 2026-11-28: floating 1:1 chat — WhatsApp link + KakaoTalk ID copy */
-.chat{position:fixed;right:20px;bottom:20px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--sans)}
-.chat__fab{display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 19px 0 16px;border-radius:999px;background:#2B2622;color:#FAF7F1;box-shadow:0 10px 26px rgba(43,38,34,.26);font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;transition:background .22s,box-shadow .22s,transform .22s}
-.chat__fab:hover{background:#A6844A;box-shadow:0 12px 30px rgba(166,132,74,.34)}
-.chat__fab:active{transform:scale(.98)}
-.chat__fab svg{width:18px;height:18px;flex:none}
-.chat__fab .chat__x{display:none}
-.chat.on .chat__fab .chat__bubble{display:none}
-.chat.on .chat__fab .chat__x{display:block}
-.chat__panel{width:min(276px,calc(100vw - 40px));padding:16px;background:#FAF7F1;border:1px solid #E2D8C6;box-shadow:0 20px 46px rgba(43,38,34,.2);visibility:hidden;opacity:0;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease,visibility .2s}
-.chat.on .chat__panel{visibility:visible;opacity:1;transform:none}
-.chat__title{font:500 9px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:#A6844A;margin:0 0 12px}
-.chat__opt{display:flex;align-items:center;gap:11px;width:100%;padding:10px 11px;background:#fff;border:1px solid #EAE1D1;color:#2B2622;text-align:left;font:inherit;cursor:pointer;transition:border-color .2s,background .2s}
-.chat__opt+.chat__opt{margin-top:8px}
-.chat__opt:hover,.chat__opt:focus-visible{border-color:#A6844A;background:#FFFCF6;outline:none}
-.chat__ic{display:flex;flex:none;width:34px;height:34px;border-radius:50%;background:#F3EEE4;align-items:center;justify-content:center}
-.chat__ic svg{width:17px;height:17px}
-.chat__tx b{display:block;font:500 13.5px/1.25 var(--sans);letter-spacing:.01em}
-.chat__tx small{display:block;margin-top:3px;font:400 11px/1.3 var(--sans);color:#7B7568;letter-spacing:.02em}
-.chat__toast{align-self:flex-end;padding:8px 13px;background:#2B2622;color:#FAF7F1;font:500 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;visibility:hidden;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s,visibility .2s;pointer-events:none}
+/* 2026-11-28: vertical stack of round messenger icons (Messenger / Zalo / WhatsApp / KakaoTalk) — identical to /saigon/ v8 */
+.chat{position:fixed;right:16px;bottom:20px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--sans)}
+.chat__ico{position:relative;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:0;padding:0;cursor:pointer;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.24);transition:transform .15s}
+.chat__ico:active{transform:scale(.93)}
+.chat__ico:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.chat__ico svg{width:27px;height:27px}
+.chat__ico.ms{background:linear-gradient(135deg,#00B2FF 0%,#006AFF 45%,#A033FF 100%)}
+.chat__ico.zl{background:#0068FF;font:800 14px/1 var(--sans);letter-spacing:-.01em}
+.chat__ico.wa{background:#25D366}
+.chat__ico.kk{background:#FEE500;color:#3A1D1D}
+.chat__toast{position:absolute;right:64px;bottom:8px;white-space:nowrap;padding:8px 13px;background:#2B2622;color:#FAF7F1;font:500 11px/1 var(--sans);letter-spacing:.06em;visibility:hidden;opacity:0;transform:translateX(4px);transition:opacity .2s,transform .2s,visibility .2s}
 .chat__toast.on{visibility:visible;opacity:1;transform:none}
-@media (max-width:380px){.chat{right:14px;bottom:14px}.chat__fab{height:44px;padding:0 16px 0 14px;font-size:10px}}
+@media (max-width:380px){.chat{right:12px;bottom:14px;gap:8px}.chat__ico{width:46px;height:46px}.chat__ico svg{width:24px;height:24px}}
 @media (prefers-reduced-motion:reduce){.chat,.chat *{transition:none!important}}
 </style>
 <style>.cities__grid{grid-template-columns:1fr 1fr}.cities__grid a.city{padding:0 0 16px;overflow:hidden}.cities__grid a.city small{padding:0 8px;font-size:9px}.cities__grid a.city img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin:0 0 12px;transition:transform .6s}.cities__grid a.city:hover img{transform:scale(1.04)}</style></head>
@@ -286,25 +277,12 @@ section.treat .pillars{margin-top:26px}
 
 <footer>Provided for reference only; it does not replace an in-person examination with a licensed physician. Results vary with individual anatomy and skin condition.<br>© 2026 Dr. Shin · Korean Aesthetic Doctor</footer>
 
-<!-- 1:1 chat -->
-<div class="chat" id="chat">
-  <div class="chat__panel" id="chatPanel" role="group" aria-label="Contact Dr. Shin directly">
-    <p class="chat__title">1:1 Consultation</p>
-    <a class="chat__opt" href="https://wa.me/84965796621" target="_blank" rel="noopener noreferrer">
-      <span class="chat__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.83 9.83 0 0 0 4.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2Zm0 17.98h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.03-.2-.31a8.14 8.14 0 0 1-1.25-4.29c0-4.52 3.68-8.19 8.2-8.19 2.19 0 4.25.86 5.8 2.4a8.14 8.14 0 0 1 2.4 5.8c0 4.52-3.68 8.13-8.2 8.13Z" fill="#2B2622"/><path d="M17.02 13.98c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.56.14-.13.31-.34.47-.52.16-.18.2-.31.31-.52.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46h-.52c-.18 0-.47.07-.7.34-.25.27-.93.9-.93 2.2 0 1.3.95 2.56 1.08 2.74.14.18 1.86 2.95 4.5 4.02.63.27 1.14.43 1.52.55.65.2 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.12-.25-.19-.52-.32Z" fill="#2B2622"/></svg></span>
-      <span class="chat__tx"><b>WhatsApp</b><small>Chat now · +84 96 579 6621</small></span>
-    </a>
-    <button class="chat__opt" type="button" id="kakaoBtn">
-      <span class="chat__ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.2c-4.72 0-8.5 3-8.5 6.72 0 2.4 1.6 4.5 4.02 5.71-.17.63-.63 2.32-.72 2.68-.11.44.17.43.35.31.15-.1 2.35-1.58 3.3-2.22.5.07 1.02.11 1.55.11 4.72 0 8.5-3 8.5-6.72S16.72 3.2 12 3.2Z" fill="#2B2622"/></svg></span>
-      <span class="chat__tx"><b>KakaoTalk</b><small id="kakaoHint">ID ayul7325 · tap to copy</small></span>
-    </button>
-  </div>
-  <span class="chat__toast" id="chatToast" role="status" aria-live="polite">Copied!</span>
-  <button class="chat__fab" type="button" id="chatFab" aria-expanded="false" aria-controls="chatPanel">
-    <svg class="chat__bubble" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.4c-4.6 0-8.3 2.9-8.3 6.5 0 2.2 1.4 4.1 3.6 5.4l-.7 2.6c-.1.4.2.5.4.4.2-.1 2.4-1.5 3.3-2.1.5.1 1.1.1 1.7.1 4.6 0 8.3-2.9 8.3-6.5S16.6 3.4 12 3.4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-    <svg class="chat__x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    <span>1:1 Chat</span>
-  </button>
+<!-- 1:1 chat: vertical messenger icons (same as /saigon/ v8) -->
+<div class="chat" id="chat" role="group" aria-label="Contact Dr. Shin directly">
+  <a class="chat__ico ms" href="https://m.me/61593982644731" target="_blank" rel="noopener noreferrer" aria-label="Messenger" title="Messenger"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.43 3.14 7.17.16.15.26.35.27.57l.05 1.78c.02.57.6.94 1.12.71l1.98-.87c.17-.08.36-.09.53-.04.91.25 1.88.38 2.91.38 5.64 0 10-4.13 10-9.7S17.64 2 12 2zm6 7.46-2.94 4.66a1.5 1.5 0 0 1-2.17.4l-2.34-1.75a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.32-.97-.18-.69-.63l2.94-4.66a1.5 1.5 0 0 1 2.17-.4l2.34 1.75a.6.6 0 0 0 .72 0l3.16-2.4c.42-.32.97.18.69.63z"/></svg></a>
+  <a class="chat__ico zl" href="https://zalo.me/0983158188" target="_blank" rel="noopener noreferrer" aria-label="Zalo" title="Zalo">Zalo</a>
+  <a class="chat__ico wa" href="https://wa.me/84965796621" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.36-1.4a9.83 9.83 0 0 0 4.68 1.2h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.48 2 12.04 2zm5.77 13.95c-.24.68-1.42 1.3-1.95 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.26-.29.57-.36.77-.36h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.1.2-.14.32-.29.49-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.08.12.08.69-.16 1.36z"/></svg></a>
+  <a class="chat__ico kk" href="https://open.kakao.com/o/sgouw7Yi" target="_blank" rel="noopener noreferrer" aria-label="KakaoTalk" title="KakaoTalk"><svg viewBox="0 0 24 24" fill="#3A1D1D" aria-hidden="true"><path d="M12 3.2c-4.72 0-8.5 3-8.5 6.72 0 2.4 1.6 4.5 4.02 5.71-.17.63-.63 2.32-.72 2.68-.11.44.17.43.35.31.15-.1 2.35-1.58 3.3-2.22.5.07 1.02.11 1.55.11 4.72 0 8.5-3 8.5-6.72S16.72 3.2 12 3.2z"/></svg></a>
 </div>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Licence enlargement"><button type="button" id="lbX" aria-label="Close">×</button><img src="" alt=""></div>
@@ -386,32 +364,6 @@ function fitKD(){const k=document.getElementById('kdText'),w=document.getElement
 fitKD();window.addEventListener('resize',fitKD);window.addEventListener('load',fitKD);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitKD);
 
-// 2026-11-28: floating 1:1 chat — WhatsApp opens, KakaoTalk ID copies
-(function(){
-  var chat=document.getElementById('chat'),fab=document.getElementById('chatFab'),panel=document.getElementById('chatPanel'),
-      toast=document.getElementById('chatToast'),kakao=document.getElementById('kakaoBtn'),hint=document.getElementById('kakaoHint');
-  if(!chat||!fab)return;
-  var KAKAO_ID='ayul7325',toastT,hintT;
-  function open(on){chat.classList.toggle('on',on);fab.setAttribute('aria-expanded',on?'true':'false');}
-  function say(msg){if(!toast)return;toast.textContent=msg;toast.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){toast.classList.remove('on')},1900);} 
-  fab.addEventListener('click',function(e){e.stopPropagation();open(!chat.classList.contains('on'));});
-  document.addEventListener('click',function(e){if(chat.classList.contains('on')&&!chat.contains(e.target))open(false);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&chat.classList.contains('on')){open(false);fab.focus();}});
-  var waLink=panel&&panel.querySelector('a.chat__opt');if(waLink)waLink.addEventListener('click',function(){setTimeout(function(){open(false)},120)});
-  if(kakao)kakao.addEventListener('click',function(){
-    var done=false;
-    var fallback=function(){try{var ta=document.createElement('textarea');ta.value=KAKAO_ID;ta.setAttribute('readonly','');
-      ta.style.cssText='position:fixed;top:0;left:-9999px;opacity:0';document.body.appendChild(ta);ta.select();
-      ta.setSelectionRange(0,KAKAO_ID.length);document.execCommand('copy');ta.remove();return true;}catch(err){return false;}};
-    var finish=function(ok){
-      if(ok){say('Copied!');if(hint){hint.textContent='ID ayul7325 · copied';clearTimeout(hintT);hintT=setTimeout(function(){hint.textContent='ID ayul7325 · tap to copy';},1900);}}
-      else{say('KakaoTalk ID: '+KAKAO_ID);}
-    };
-    if(navigator.clipboard&&window.isSecureContext){
-      navigator.clipboard.writeText(KAKAO_ID).then(function(){finish(true);},function(){finish(fallback());});
-    }else{finish(fallback());}
-  });
-})();
 </script>
 </body>
 </html>
